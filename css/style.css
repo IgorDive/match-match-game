@@ -1,0 +1,252 @@
+
+body {
+	background-color: lightgray;
+	font-size: 10px;
+	width: 100vw;
+	height: 100vh;
+}
+
+header {
+	position: relative;
+	height: 50px;
+	background-color: rgb(255, 248, 155);
+}
+
+section {
+	width: 100%;
+	height: 100%;
+}
+
+
+
+.shirts {
+	position: absolute;
+	left: 30px;
+	top: 0px;
+	overflow: hidden;
+	height: 50px;
+	width: 100px;
+	background-color: lightgreen;
+	text-align: center;
+	border-radius: 5px;
+	user-select: none;
+	transition-property: box-shadow, height;
+	transition-duration: 0.1s, 0.2s;
+	transition-timing-function: ease, ease-in-out;
+	z-index: 1;
+}
+
+.shirts:hover {
+	box-shadow: 0 0 15px red inset;
+}
+
+label[for="shirts-menu"] {
+	font-size: 1.3rem;
+	font-weight: 900;
+	color: red;
+	line-height: 2.5;
+	user-select: none;
+	cursor: pointer;
+}
+
+.shirts>label:not(:first-child) {
+	line-height: 2.2;
+	user-select: none;
+	cursor: pointer;
+	position: relative;
+}
+
+input {
+	visibility: hidden;
+}
+
+.shirts>label:not(:first-child)>input {
+	position: absolute;
+	left: 50%;
+}
+
+.shirts>label:not(:first-child)>input:checked::before {
+	position: absolute;
+	left: 25px;
+	top: 12px;
+	font: 700 1rem Arial;
+	color: darkgreen;
+	content: "<";
+	visibility: visible;
+}
+
+input[name="shirts"]:checked+div {
+	height: 200px;
+}
+
+
+
+
+.difficulty {
+	position: absolute;
+	left: 160px;
+	top: 0px;
+	overflow: hidden;
+	height: 50px;
+	width: 140px;
+	background-color: lightgreen;
+	text-align: center;
+	border-radius: 5px;
+	user-select: none;
+	transition-property: box-shadow, height;
+	transition-duration: 0.1s, 0.2s;
+	transition-timing-function: ease, ease-in-out;
+	z-index: 1;
+}
+
+.difficulty:hover {
+	box-shadow: 0 0 15px red inset;
+}
+
+input[name="difficulty"]:checked+div {
+	height: 200px;
+}
+
+label[for="difficulty-menu"] {
+	font-size: 1.3rem;
+	font-weight: 900;
+	color: red;
+	line-height: 2.5;
+	user-select: none;
+	cursor: pointer;
+}
+
+.difficulty>label:not(:first-child) {
+	position: relative;
+	color: darkgreen;
+	font: 700 1rem/2.6 "Times New Roman";
+	user-select: none;
+	cursor: pointer;
+}
+
+.difficulty>label:not(:first-child)>input {
+	position: absolute;
+	left: 50%;
+}
+
+.difficulty>label:not(:first-child)>input:checked::before {
+	position: absolute;
+	left: 52px;
+	top: 12px;
+	font: 700 1rem Arial;
+	color: darkgreen;
+	content: "<";
+	visibility: visible;
+}
+
+
+
+
+header>button {
+	position: absolute;
+	right: 30px;
+	top: 0px;
+	height: 50px;
+	width: 140px;
+	border: none;
+	font-size: 1.3rem;
+	font-weight: 900;
+	font-family: "Times New Roman";
+	color: red;
+	background-color: lightgreen;
+	border-radius: 5px;
+	user-select: none;
+	cursor: pointer;
+	transition: box-shadow 0.1s ease;
+}
+
+header>button:hover {
+	box-shadow: 0 0 15px red inset;
+}
+
+
+
+.game-field {
+	width: 100%;
+	height: calc(100% - 50px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	perspective: 3000px;
+	background: url('../images/background.svg') no-repeat 50% 50%;
+	background-size: cover;	
+}
+
+.cards-row {
+	width: 96%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	transform-style: preserve-3d;
+	user-select: none;
+	align-items: stretch;
+	text-align: center;
+	font: 1.5rem/1.4 Arial;
+	color: rgb(50, 50, 50);
+}
+
+.card {
+	flex: 1 1 auto;
+	border: solid purple 2px;
+	border-radius: 20px;
+	background-color: lightgreen;
+	position: relative;
+	margin: 0.5% 1%;
+	transform-style: preserve-3d;
+	transform-origin: right center;
+	transition-property: transform, opacity;
+	transition-duration: 1s, 2s;
+	transition-timing-function: ease, ease;
+}
+
+.face {
+	transform: translate3d(-102%, 0, 30px) rotateY(180deg);
+}
+
+.picture {
+	position: absolute;
+	width: 90%;
+	height: 90%;
+	left: 5%;
+	top: 5%;
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+}
+
+.shirt {
+	position: absolute;
+	width: 90%;
+	height: 90%;
+	left: 5%;
+	top: 5%;
+	backface-visibility: hidden;
+}
+
+
+
+h3 {
+	margin: 5px;
+}
+
+ol {
+	margin: 5px 0px;
+}
+
+
+
+@media all and (max-width: 660px), all and (max-height: 420px) {
+	.body {
+		min-width: 500px;
+		min-height: 310px;
+	}
+	
+	.cards-row {
+		font: 0.8rem/1.4 Arial;
+	}
+}
