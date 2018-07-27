@@ -1,4 +1,5 @@
-# match-match-game
+﻿Match-Match Game
+
 Requirements
 
 При входе в игру пользователь видит приветсвие и краткие правила игры
